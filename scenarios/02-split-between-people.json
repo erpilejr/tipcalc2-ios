@@ -1,0 +1,230 @@
+{
+  "title": "Split between people",
+  "scenarios": [
+    {
+      "name": "New start",
+      "lines": [
+        19,
+        24,
+        30
+      ],
+      "steps": [
+        {
+          "id": "bill-input",
+          "op": "shows",
+          "text": ""
+        },
+        {
+          "id": "tip-label",
+          "op": "shows",
+          "text": "Tip: 15%"
+        },
+        {
+          "id": "people-count",
+          "op": "shows",
+          "text": "1"
+        },
+        {
+          "id": "tip-amount",
+          "op": "shows",
+          "text": "$0.00"
+        },
+        {
+          "id": "total-amount",
+          "op": "shows",
+          "text": "$0.00"
+        },
+        {
+          "id": "each-amount",
+          "op": "shows",
+          "text": "$0.00"
+        },
+        {
+          "id": "people-minus",
+          "op": "tap"
+        },
+        {
+          "id": "people-count",
+          "op": "shows",
+          "text": "1"
+        }
+      ]
+    },
+    {
+      "name": "Split example",
+      "lines": [
+        25,
+        28,
+        30
+      ],
+      "steps": [
+        {
+          "id": "bill-input",
+          "op": "type",
+          "text": "41.50"
+        },
+        {
+          "id": "people-plus",
+          "op": "tap"
+        },
+        {
+          "id": "people-count",
+          "op": "shows",
+          "text": "2"
+        },
+        {
+          "id": "total-amount",
+          "op": "shows",
+          "text": "$47.73"
+        },
+        {
+          "id": "each-amount",
+          "op": "shows",
+          "text": "$23.87"
+        },
+        {
+          "id": "people-minus",
+          "op": "tap"
+        },
+        {
+          "id": "people-count",
+          "op": "shows",
+          "text": "1"
+        },
+        {
+          "id": "each-amount",
+          "op": "shows",
+          "text": "$47.73"
+        },
+        {
+          "id": "people-minus",
+          "op": "tap"
+        },
+        {
+          "id": "people-count",
+          "op": "shows",
+          "text": "1"
+        }
+      ]
+    },
+    {
+      "name": "At most twenty",
+      "lines": [
+        19,
+        28,
+        30
+      ],
+      "steps": [
+        {
+          "id": "bill-input",
+          "op": "type",
+          "text": "100"
+        },
+        {
+          "id": "people-plus",
+          "op": "tap"
+        },
+        {
+          "id": "people-plus",
+          "op": "tap"
+        },
+        {
+          "id": "people-plus",
+          "op": "tap"
+        },
+        {
+          "id": "people-plus",
+          "op": "tap"
+        },
+        {
+          "id": "people-plus",
+          "op": "tap"
+        },
+        {
+          "id": "people-plus",
+          "op": "tap"
+        },
+        {
+          "id": "people-plus",
+          "op": "tap"
+        },
+        {
+          "id": "people-plus",
+          "op": "tap"
+        },
+        {
+          "id": "people-plus",
+          "op": "tap"
+        },
+        {
+          "id": "people-plus",
+          "op": "tap"
+        },
+        {
+          "id": "people-plus",
+          "op": "tap"
+        },
+        {
+          "id": "people-plus",
+          "op": "tap"
+        },
+        {
+          "id": "people-plus",
+          "op": "tap"
+        },
+        {
+          "id": "people-plus",
+          "op": "tap"
+        },
+        {
+          "id": "people-plus",
+          "op": "tap"
+        },
+        {
+          "id": "people-plus",
+          "op": "tap"
+        },
+        {
+          "id": "people-plus",
+          "op": "tap"
+        },
+        {
+          "id": "people-plus",
+          "op": "tap"
+        },
+        {
+          "id": "people-plus",
+          "op": "tap"
+        },
+        {
+          "id": "people-count",
+          "op": "shows",
+          "text": "20"
+        },
+        {
+          "id": "each-amount",
+          "op": "shows",
+          "text": "$5.75"
+        },
+        {
+          "id": "people-plus",
+          "op": "tap"
+        },
+        {
+          "id": "people-count",
+          "op": "shows",
+          "text": "20"
+        },
+        {
+          "id": "people-minus",
+          "op": "tap"
+        },
+        {
+          "id": "people-count",
+          "op": "shows",
+          "text": "19"
+        }
+      ]
+    }
+  ]
+}
