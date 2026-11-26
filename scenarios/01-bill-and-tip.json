@@ -1,0 +1,333 @@
+{
+  "title": "Bill and tip",
+  "scenarios": [
+    {
+      "name": "Starts empty",
+      "lines": [
+        15,
+        17,
+        18,
+        20,
+        26
+      ],
+      "steps": [
+        {
+          "id": "bill-input",
+          "op": "shows",
+          "text": ""
+        },
+        {
+          "id": "tip-10",
+          "op": "exists"
+        },
+        {
+          "id": "tip-15",
+          "op": "exists"
+        },
+        {
+          "id": "tip-20",
+          "op": "exists"
+        },
+        {
+          "id": "tip-label",
+          "op": "shows",
+          "text": "Tip: 15%"
+        },
+        {
+          "id": "tip-amount",
+          "op": "shows",
+          "text": "$0.00"
+        },
+        {
+          "id": "total-amount",
+          "op": "shows",
+          "text": "$0.00"
+        },
+        {
+          "id": "each-amount",
+          "op": "shows",
+          "text": "$0.00"
+        }
+      ]
+    },
+    {
+      "name": "Fifteen percent example",
+      "lines": [
+        17,
+        20,
+        25,
+        27
+      ],
+      "steps": [
+        {
+          "id": "bill-input",
+          "op": "type",
+          "text": "41.50"
+        },
+        {
+          "id": "tip-amount",
+          "op": "shows",
+          "text": "$6.23"
+        },
+        {
+          "id": "total-amount",
+          "op": "shows",
+          "text": "$47.73"
+        },
+        {
+          "id": "each-amount",
+          "op": "shows",
+          "text": "$47.73"
+        }
+      ]
+    },
+    {
+      "name": "Change tip",
+      "lines": [
+        18,
+        25,
+        27
+      ],
+      "steps": [
+        {
+          "id": "bill-input",
+          "op": "type",
+          "text": "100"
+        },
+        {
+          "id": "tip-10",
+          "op": "tap"
+        },
+        {
+          "id": "tip-label",
+          "op": "shows",
+          "text": "Tip: 10%"
+        },
+        {
+          "id": "tip-amount",
+          "op": "shows",
+          "text": "$10.00"
+        },
+        {
+          "id": "total-amount",
+          "op": "shows",
+          "text": "$110.00"
+        },
+        {
+          "id": "tip-20",
+          "op": "tap"
+        },
+        {
+          "id": "tip-label",
+          "op": "shows",
+          "text": "Tip: 20%"
+        },
+        {
+          "id": "tip-amount",
+          "op": "shows",
+          "text": "$20.00"
+        },
+        {
+          "id": "total-amount",
+          "op": "shows",
+          "text": "$120.00"
+        }
+      ]
+    },
+    {
+      "name": "Thousands separator",
+      "lines": [
+        20
+      ],
+      "steps": [
+        {
+          "id": "bill-input",
+          "op": "type",
+          "text": "1000"
+        },
+        {
+          "id": "tip-20",
+          "op": "tap"
+        },
+        {
+          "id": "tip-amount",
+          "op": "shows",
+          "text": "$200.00"
+        },
+        {
+          "id": "total-amount",
+          "op": "shows",
+          "text": "$1,200.00"
+        },
+        {
+          "id": "each-amount",
+          "op": "shows",
+          "text": "$1,200.00"
+        }
+      ]
+    },
+    {
+      "name": "Half cent rounds up",
+      "lines": [
+        27,
+        29
+      ],
+      "steps": [
+        {
+          "id": "bill-input",
+          "op": "type",
+          "text": "10.05"
+        },
+        {
+          "id": "tip-10",
+          "op": "tap"
+        },
+        {
+          "id": "tip-amount",
+          "op": "shows",
+          "text": "$1.01"
+        },
+        {
+          "id": "total-amount",
+          "op": "shows",
+          "text": "$11.06"
+        }
+      ]
+    },
+    {
+      "name": "Not a number",
+      "lines": [
+        25,
+        26
+      ],
+      "steps": [
+        {
+          "id": "bill-input",
+          "op": "type",
+          "text": "abc"
+        },
+        {
+          "id": "tip-amount",
+          "op": "shows",
+          "text": "$0.00"
+        },
+        {
+          "id": "total-amount",
+          "op": "shows",
+          "text": "$0.00"
+        },
+        {
+          "id": "each-amount",
+          "op": "shows",
+          "text": "$0.00"
+        },
+        {
+          "id": "bill-input",
+          "op": "clear"
+        },
+        {
+          "id": "bill-input",
+          "op": "type",
+          "text": "20"
+        },
+        {
+          "id": "total-amount",
+          "op": "shows",
+          "text": "$23.00"
+        },
+        {
+          "id": "bill-input",
+          "op": "clear"
+        },
+        {
+          "id": "tip-amount",
+          "op": "shows",
+          "text": "$0.00"
+        },
+        {
+          "id": "total-amount",
+          "op": "shows",
+          "text": "$0.00"
+        },
+        {
+          "id": "each-amount",
+          "op": "shows",
+          "text": "$0.00"
+        }
+      ]
+    },
+    {
+      "name": "Spaces ignored",
+      "lines": [
+        32
+      ],
+      "steps": [
+        {
+          "id": "bill-input",
+          "op": "type",
+          "text": "  41.50  "
+        },
+        {
+          "id": "tip-amount",
+          "op": "shows",
+          "text": "$6.23"
+        },
+        {
+          "id": "total-amount",
+          "op": "shows",
+          "text": "$47.73"
+        }
+      ]
+    },
+    {
+      "name": "Nothing saved",
+      "lines": [
+        31
+      ],
+      "steps": [
+        {
+          "id": "bill-input",
+          "op": "type",
+          "text": "41.50"
+        },
+        {
+          "id": "tip-20",
+          "op": "tap"
+        },
+        {
+          "id": "total-amount",
+          "op": "shows",
+          "text": "$49.80"
+        },
+        {
+          "op": "restart"
+        },
+        {
+          "id": "bill-input",
+          "op": "shows",
+          "text": ""
+        },
+        {
+          "id": "tip-label",
+          "op": "shows",
+          "text": "Tip: 15%"
+        },
+        {
+          "id": "tip-amount",
+          "op": "shows",
+          "text": "$0.00"
+        },
+        {
+          "id": "total-amount",
+          "op": "shows",
+          "text": "$0.00"
+        },
+        {
+          "id": "each-amount",
+          "op": "shows",
+          "text": "$0.00"
+        }
+      ]
+    }
+  ]
+}
