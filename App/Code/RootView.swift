@@ -35,7 +35,7 @@ struct TipCalc {
     static func amounts(bill text: String, percent: Int, people: Int = 1) -> Amounts {
         let bill = parse(text) ?? 0
         let tip = cents(bill * Decimal(percent) / 100)
-        let total = bill + tip
+        let total = cents(bill + tip) // spec line 29: exact decimal, half a cent rounds up
         let each = cents(total / Decimal(people))
         return Amounts(tip: money(tip), total: money(total), each: money(each))
     }
