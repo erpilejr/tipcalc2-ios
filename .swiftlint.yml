@@ -1,0 +1,11 @@
+included:
+  - App
+  - AppTests
+  - AppUITests
+excluded:
+  - AppUITests/Spec
+line_length: 140
+identifier_name:
+  excluded:
+    - x
+    - o
