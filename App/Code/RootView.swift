@@ -44,9 +44,10 @@ struct TipCalc {
 struct RootView: View {
     @State private var bill = ""
     @State private var percent = 15
+    @State private var people = 1
 
     var body: some View {
-        let result = TipCalc.amounts(bill: bill, percent: percent)
+        let result = TipCalc.amounts(bill: bill, percent: percent, people: people)
         VStack(spacing: 12) {
             TextField("Bill", text: $bill)
                 .textFieldStyle(.roundedBorder)
@@ -61,6 +62,14 @@ struct RootView: View {
             Text("Tip: \(percent)%").accessibilityIdentifier("tip-label")
             Text(result.tip).accessibilityIdentifier("tip-amount")
             Text(result.total).accessibilityIdentifier("total-amount")
+            HStack(spacing: 20) {
+                Button("−") { people = max(1, people - 1) }
+                    .accessibilityIdentifier("people-minus")
+                Text("\(people)").accessibilityIdentifier("people-count")
+                Button("+") { people = min(20, people + 1) }
+                    .accessibilityIdentifier("people-plus")
+            }
+            .buttonStyle(.bordered)
             Text(result.each).accessibilityIdentifier("each-amount")
             Spacer()
         }
