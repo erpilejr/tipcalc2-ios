@@ -60,9 +60,7 @@ struct RootView: View {
             }
             .buttonStyle(.bordered)
             Text("Tip: \(percent)%").accessibilityIdentifier("tip-label")
-            Text(result.tip).accessibilityIdentifier("tip-amount")
-            Text(result.total).accessibilityIdentifier("total-amount")
-            HStack(spacing: 20) {
+            HStack(spacing: 20) { // spec lines 19-20: people row, then the three amounts below it
                 Button("−") { people = max(1, people - 1) }
                     .accessibilityIdentifier("people-minus")
                 Text("\(people)").accessibilityIdentifier("people-count")
@@ -70,6 +68,8 @@ struct RootView: View {
                     .accessibilityIdentifier("people-plus")
             }
             .buttonStyle(.bordered)
+            Text(result.tip).accessibilityIdentifier("tip-amount")
+            Text(result.total).accessibilityIdentifier("total-amount")
             Text(result.each).accessibilityIdentifier("each-amount")
             Spacer()
         }
